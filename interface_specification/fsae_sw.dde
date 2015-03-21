@@ -1,0 +1,50 @@
+*****************************************************************************
+**
+**  Project:        OpenECU
+**  Version:        $Id: $
+**  File:           $URL: $
+**  Description:    Data dictionary file.
+**
+**  Copyright (C) 2012 Pi Innovo
+**  This document (program) contains proprietary information
+**  which is the property of Pi Innovo
+**  The contents of this document (program) must not be copied
+**  or disclosed to a third party without the prior agreement
+**  of an authorised officer of Pi Innovo
+**
+*****************************************************************************
+
+** The following line defines the order of the columns in the remaining lines.
+** Each line uses a single TAB character to separate columns. 
+
+Name	Units	Class	Min	Max	Xaxis	Yaxis	Description
+
+** Calibrations related to engine configuration
+angc_crank_teeth	Teeth	c	36	60			This scalar defines the number of teeth on the toothed crankshaft wheel
+angc_crank_missing	Teeth	c	1	2			This scalar defines the number of missing teeth on the toothed crankshaft wheel
+angc_calculation_angle	Degrees	c	-360	360			This scalar specifies the angle in degrees relative to firing TDC
+angc_cam_start_angle	Degrees	c	0	720			This scalar specifies the start angle of the cam window 
+angc_cam_end_angle	Degrees	c	0	720			This scalar specifies the end angle of the cam window
+angc_cam_wheel_fitted	flag	c	0	1			This Boolean specifies that a camshaft wheel is fitted
+angc_coil_off_angle	Degrees	c	-360	360			This scalar defines the angle at which to stop coil charge from TDC firing of cylinder
+angc_coil_on_angle	Degrees	c	-360	360			This scalar defines the angle at which to start coil charge from TDC firing of cylinder
+angc_inj_deadtime	Milliseconds	c	0	349.5			This scalar defines the injector dead-time 
+angc_inj_on_angle	Degrees	c	-360	360			This scalar defines the angle from TDC to turn the injector on.
+angc_inj_end_of_intake	Degrees	c	-360	360			This scalar defines the angle at this to turn the injector off.
+angc_inj_flowtime	Milliseconds	c	0	349.5			This scalar defines the duration of injection flow time 
+angc_initial_fuel_pulse_dt	Milliseconds	c	0	500			This scalar defines the length of the initial fuel pulse (dead time)
+angc_initial_fuel_pulse_ft	Milliseconds	c	0	500			This scalar defines the length of the initial fuel pulse (flow time)
+
+** Measurements
+ang_crank_movement	flag	d	0	1			This Boolean is TRUE if crankshaft movement is occuring and FALSE otherwise
+ang_synced_with_crank	flag	d	0	1			This Boolean is TRUE if crankshaft synchronisation has occurred and FALSE otherwise
+ang_synced_with_cam	flag	d	0	1			This Boolean is TRUE if camshaft synchronisation has occurred and FALSE otherwise
+ang_crank_angle_valid	flag	d	0	1			This Boolean is TRUE if ang_crank_angle is valid, FALSE otherwise
+ang_crank_angle	Degrees	d	0	360			The current crank angle if ang_crank_angle_valid is TRUE
+ang_avg_engine_speed	RPM/s	d	0	10000			This scalar holds the average engine speed calculated since the last TDC 720° ago. 
+ang_engine_speed	RPM/s	d	0	10000			This scalar holds the engine speed calculated since the last TDC 720° ago. 
+ang_engine_angle_valid	flag	d	0	1			This Boolean is TRUE if ang_engine_angle is valid, FALSE otherwise
+ang_engine_angle	Degrees	d	0	720			The current engine angle if ang_engine_angle_valid is TRUE
+ang_pri_sensor_counts	ADC counts	d	0	1023			This scalar holds the averaged primary angular sensor A/D counts taken during each angular event
+ang_sec_sensor_counts	ADC counts	d	0	1023			This scalar holds the averaged secondary angular sensor A/D counts taken during each angular event
+

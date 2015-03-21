@@ -1,0 +1,106 @@
+/*
+ *****************************************************************************
+ *
+ *  Project:        OpenECU
+ *  Version:        $Id: $
+ *  File:           $URL: $
+ *  Description:    Interface specification of the C-API 'step1' example.
+ *
+ *  Copyright (C) 2012 Pi Innovo
+ *  This document (program) contains proprietary information
+ *  which is the property of Pi Innovo
+ *  The contents of this document (program) must not be copied
+ *  or disclosed to a third party without the prior agreement
+ *  of an authorised officer of Pi Innovo
+ *
+ *****************************************************************************
+ */
+
+/* Select the target ECU for the application */
+
+target-ecu
+{
+  hw-part-number   = "01T-068077";
+  hw-issue-number  = 1;
+}
+
+/* Define version and description data about the application */
+
+application
+{
+  major-version    = 1;
+  minor-version    = 0;
+  subminor-version = 0;
+
+  description      = "FSAE engine control software";
+  copyright        = "Copyright 2015, Andrew Palardy";
+  name             = "FSAE SW, v%ver-major%.%ver-minor%.%ver-subminor%, %target%";
+
+  os-native
+  {
+    stack-size = 5120;
+
+    task
+    {
+      name     = ang_task_tdc;
+      priority = 2;
+      function = ang_task_tdc_func;
+      trigger  = tdc-firing;
+    }
+
+    task
+    {
+      name     = temp_task_10ms;
+      priority = 3;
+      period   = 10;
+      function = temp_task_10ms_func;
+    }
+
+    task
+    {
+      name     = temp_task_5ms;
+      priority = 1;
+      period   = 5;
+      function = temp_task_5ms_func;
+    }
+
+    task
+    {
+      name     = temp_task_40ms;
+      priority = 4;
+      period   = 40;
+      function = temp_task_40ms_func;
+    }
+
+    task
+    {
+      name     = temp_task_320ms;
+      priority = 4;
+      period   = 320;
+      function = temp_task_320ms_func;
+    }
+
+  }
+}
+
+/* Setup the CAN identifiers and other parameters for CCP messaging */
+
+ccp-messaging
+{
+  cro             = 1785;
+  dto             = 1784;
+  station-address = 0;
+  can-bus         = 0;
+  baud            = 500;
+
+  enabled-during-application-mode = true;
+}
+
+/* Reference the data descriptions for ASAP2 generation */
+
+ddes
+{
+  include-dde-tabbed-c "../interface_specification/fsae_sw.dde";
+
+  generate-library-ddes = true;
+}
