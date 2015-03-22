@@ -1,14 +1,8 @@
 /*
 Copyright 2014, 2015 Andrew Palardy
 Kettering University CSC/FSAE Engine Software
-Sensors Input
+Sensors Input (header)
 */
-
-//
-// Andrew Palardy
-// Sensor Processing
-// Data File
-//
 
 #include "openecu.h"
 #include "fsae_sw.h"
