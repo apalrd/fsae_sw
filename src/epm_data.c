@@ -1,0 +1,60 @@
+//
+// Andrew Palardy
+// Sensor Processing
+// Data File
+//
+
+#include "openecu.h"
+#include "fsae_sw.h"
+#include "epm.h"
+
+
+//Engine configuration
+OE_CAL F32 EPM_TDC_ANGLES[2] = {
+    180.0,
+    540.0
+};
+//Cam/Crank config
+OE_CAL U8 EPM_CRANK_TEETH = 12U;
+OE_CAL U8 EPM_CRANK_MISS_TEETH = 1U;
+//Injector config
+OE_CAL PDX_LCHAN_T EPM_INJ_CHANS[2] = {
+    PIO_INJOT_A17,
+    PIO_INJOT_A29
+};
+//Spark config
+OE_CAL PDX_LCHAN_T EPM_SPK_CHANS[1] = {
+    PIO_IGNOT_A35
+};
+//Software config
+OE_CAL F32 EPM_SW_CALC_ANGLE = -90;
+static const PAX_LCHAN_T EPM_SW_PRI_CHAN = PIO_AIN_A19;
+OE_CAL F32 EPM_SW_PRI_ANG[1] = { -120.0 };
+
+//Engine RAM
+U8 EPM_CUR_CYL;
+U8 CURRENT_CYLINDER;//Shortcut variable
+//Cam/Crank RAM
+BOOL EPM_SYNC_MOVE;
+BOOL EPM_SYNC_WITH_CRANK;
+BOOL EPM_SYNC_WITH_CAM;
+BOOL EPM_SYNC_VALID_CRANK;
+BOOL EPM_SYNC_VALID_ENG;
+F32 EPM_SYNC_ANG_CRANK;
+F32 EPM_SYNC_ANG_ENG;
+F32 EPM_SPD_AVG;
+F32 EPM_SPD;
+F32 RPM; //Shortcut variable
+F32 ENGINE_POSITION; //Shortcut variable
+//Injector RAM
+F32 EPM_INJ_DEADTIME;
+F32 EPM_INJ1_TIME;
+F32 EPM_INJ2_TIME;
+F32 EPM_INJ_FIRING_ANG;
+F32 EPM_INJ_DROP_DEAD_ANG;
+//Spark RAM
+F32 EPM_SPK_DWELL;
+F32 EPM_SPK_ANG;
+F32 EPM_SPK_START_ANG;
+//Software RAM
+S16 EPM_SW_PRI_V;
