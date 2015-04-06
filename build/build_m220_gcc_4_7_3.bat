@@ -100,6 +100,15 @@ for /f "delims=xxx" %%i in ('%OPENECU_CAPI_INPUT% --cfg-flags') do set CFG_FLAGS
 %OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o fsae_sw_api.o fsae_sw_api.c > fsae_sw_api.lst
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
+%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o spark.o     ..\..\src\spark.c > spark.lst
+@IF %ERRORLEVEL% NEQ 0 GOTO EndError
+
+%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o spark_data.o     ..\..\src\spark_data.c > spark_data.lst
+@IF %ERRORLEVEL% NEQ 0 GOTO EndError
+
+%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o com_idx.o     ..\..\src\com_idx.c > com_idx.lst
+@IF %ERRORLEVEL% NEQ 0 GOTO EndError
+
 @REM --------------------------------------------------------------------
 @REM Link the objects
 @REM --------------------------------------------------------------------
@@ -107,7 +116,7 @@ for /f "delims=xxx" %%i in ('%OPENECU_CAPI_INPUT% --cfg-flags') do set CFG_FLAGS
 @%OPENECU_PYTHON%python %OPENECU_CAPI%capi.py -i ..\..\interface_specification\fsae_sw.capi --oe-base-path %OPENECU_BASE% --compiler gcc_4_7_3 --output-linker-file link_m220_gcc_4_7_3.ld.tmp
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
-%OPENECU_GCC%powerpc-eabispe-ld @%OPENECU_TARGET%mk_link_gcc_4_7_3.opts -L%OPENECU_GCC%..\lib\gcc\powerpc-eabispe\4.7.3 -L%OPENECU_GCC%..\powerpc-eabispe\lib -L%OPENECU_LIB% -T link_m220_gcc_4_7_3.ld.tmp -( --no-whole-archive -l:platform_no_vle_diab_5_5_1_0.a -lgcc -lm -lc fsae_sw_api.o fsae_sw.o gasflows.o gasflows_data.o sensors.o sensors_data.o epm.o epm_data.o -) -Map fsae_sw.map -o fsae_sw.elf > fsae_sw_ld.log
+%OPENECU_GCC%powerpc-eabispe-ld @%OPENECU_TARGET%mk_link_gcc_4_7_3.opts -L%OPENECU_GCC%..\lib\gcc\powerpc-eabispe\4.7.3 -L%OPENECU_GCC%..\powerpc-eabispe\lib -L%OPENECU_LIB% -T link_m220_gcc_4_7_3.ld.tmp -( --no-whole-archive -l:platform_no_vle_diab_5_5_1_0.a -lgcc -lm -lc fsae_sw_api.o fsae_sw.o gasflows.o gasflows_data.o sensors.o sensors_data.o epm.o epm_data.o spark.o spark_data.o com_idx.o -) -Map fsae_sw.map -o fsae_sw.elf > fsae_sw_ld.log
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
 @REM --------------------------------------------------------------------

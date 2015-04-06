@@ -47,9 +47,6 @@ OE_CAL U8 GF_CylNumberEff = 1;
 OE_CAL F32 GF_SpecificGasConst = 0.00;
 
 //Tables
-OE_CAL F32 GF_RPMIdx[17] = {
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
-};
 OE_CAL F32 GF_MAPIdx[17] = {
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
 };

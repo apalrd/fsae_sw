@@ -6,6 +6,7 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "gasflows.h"
+#include "com_idx.h"
 
 //Functions for calculating out flows in the 10ms task
 void GF_Calc10MS()
@@ -42,7 +43,7 @@ void GF_CalcTDC()
                        GF_MAP,
                        17,
                        17,
-                       GF_RPMIdx,
+                       IDX_RPM,
                        GF_MAPIdx,
                        GF_VESurf,
                        &GF_VEBase);

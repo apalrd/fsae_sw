@@ -7,6 +7,7 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "epm.h"
+#include "spark.h"
 
 void EPM_Calc5MS()
 {
@@ -42,8 +43,8 @@ void EPM_CalcTDC2()
     F32 active_inj;
     
     //Spark
-    EPM_SPK_ANG = SPARK_ACTUAL_CYL1;
-    EPM_SPK_DWELL = SPARK_DWELL;
+    EPM_SPK_ANG = SPK_ADV;
+    EPM_SPK_DWELL = SPK_DWELL;
     
     //Calculate angular dwell time
 #error "Need to calculate angular dwell time"

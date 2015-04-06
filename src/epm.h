@@ -4,9 +4,6 @@ Kettering University CSC/FSAE Engine Software
 Engine Drivers
 */
 
-#include "openecu.h"
-#include "fsae_sw.h"
-
 
 //Engine configuration
 extern F32 EPM_TDC_ANGLES[];

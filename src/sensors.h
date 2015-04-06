@@ -4,10 +4,6 @@ Kettering University CSC/FSAE Engine Software
 Sensors Input (header)
 */
 
-#include "openecu.h"
-#include "fsae_sw.h"
-#include "sensors.h"
-
 //ECT sensor
 extern F32 SENS_ECT; //DegC
 extern S16 SENS_ECT_V; //Volts (raw)
