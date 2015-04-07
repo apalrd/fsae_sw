@@ -20,8 +20,9 @@
 
 target-ecu
 {
-  hw-part-number   = "01T-068077";
-  hw-issue-number  = 1;
+hw-part-number   = "01T-068432";
+hw-issue-number  = 3;
+hw-option        = "000";
 }
 
 /* Define version and description data about the application */
