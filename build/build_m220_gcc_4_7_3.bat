@@ -61,6 +61,7 @@ SET OPENECU_S37_TO_HEX=%OPENECU_BASE%tools\gen_hex_from_s37\
 @REM Set the location for tool integration files
 SET TOOL_INTEGRATION_DIR=%OPENECU_BASE%tool_integration\
 
+
 @REM --------------------------------------------------------------------
 @REM Create the interface code to link the application and library
 @REM --------------------------------------------------------------------
@@ -159,6 +160,7 @@ copy /y "%TOOL_INTEGRATION_DIR%pisnoop\snoop_os_defs.snx" .\fsae_sw.snx >nul
 :EndError
 
 @ECHO "Error: build incomplete."
+PAUSE
 
 :End
 
