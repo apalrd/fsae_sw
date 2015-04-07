@@ -68,6 +68,15 @@ void Task_40MS()
 //Init
 void psc_initialize_app()
 {
+    //Setup comms
+    pcx_config(PIO_CAN_A28_A43, PIO_CBAUD_500_KBPS);
+    pcx_config(PIO_CAN_A23_A24, PIO_CBAUD_500_KBPS);
+    /* Turn on the internal 5V supply to pull up analogue inputs,
+     * making A/D readings valid.
+     */
+    pdx_digital_output(PIO_DOT_A25_ENABLE_EXT_PSU1, 1, TRUE);
+    
+    
     //EPM
     EPM_Init();
     //Sensors
