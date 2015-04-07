@@ -5,6 +5,7 @@
 
 
 #include "openecu.h"
+#include "fsae_sw_api.h"
 #include "fsae_sw.h"
 #include "epm.h"
 #include "spark.h"
