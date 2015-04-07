@@ -14,7 +14,7 @@ void SEN_Calc320MS()
     //ECT sensor
     
     //Read the sensor
-    pax_adc_input(PIO_AIN_A19, &SENS_ECT_V, FALSE);
+    pax_adc_input(PIO_AIN_A15, &SENS_ECT_V, FALSE);
     
     //proc AI input
     put_process_analog_input(SENS_ECT_V,
@@ -39,7 +39,7 @@ void SEN_Calc320MS()
     //ACT sensor
     
     //Read the sensor
-    pax_adc_input(PIO_AIN_A19, &SENS_ACT_V, FALSE);
+    pax_adc_input(PIO_AIN_A10, &SENS_ACT_V, FALSE);
     
     //proc AI input
     put_process_analog_input(SENS_ACT_V,
@@ -68,7 +68,7 @@ void SENS_Calc5MS()
     //TPS sensor
     
     //Read the sensor
-    pax_adc_input(PIO_AIN_A19, &SENS_TPS_V, FALSE);
+    pax_adc_input(PIO_AIN_A13, &SENS_TPS_V, FALSE);
     
     //proc AI input
     put_process_analog_input(SENS_TPS_V,
@@ -93,7 +93,7 @@ void SENS_Calc5MS()
     //PVS sensor
     
     //Read the sensor
-    pax_adc_input(PIO_AIN_A19, &SENS_PVS_V, FALSE);
+    pax_adc_input(PIO_AIN_A12, &SENS_PVS_V, FALSE);
     
     //proc AI input
     put_process_analog_input(SENS_PVS_V,
@@ -118,7 +118,7 @@ void SENS_Calc5MS()
     //MAP sensor
     
     //Read the sensor
-    pax_adc_input(PIO_AIN_A19, &SENS_MAP_V, FALSE);
+    pax_adc_input(PIO_AIN_A3, &SENS_MAP_V, FALSE);
     
     //proc AI input
     put_process_analog_input(SENS_MAP_V,
@@ -152,19 +152,19 @@ void SENS_CalcTDC()
 void SENS_Init()
 {
     //ECT sensor
-    pax_adc_input(PIO_AIN_A19,&SENS_ECT_V,TRUE);
+    pax_adc_input(PIO_AIN_A15,&SENS_ECT_V,TRUE);
     put_process_analog_input_init(&SENS_ECT_PROC_PAI_WORK);
     //ACT sensor
-    pax_adc_input(PIO_AIN_A19,&SENS_ACT_V,TRUE);
+    pax_adc_input(PIO_AIN_A10,&SENS_ACT_V,TRUE);
     put_process_analog_input_init(&SENS_ACT_PROC_PAI_WORK);
     //TPS sensor
-    pax_adc_input(PIO_AIN_A19,&SENS_TPS_V,TRUE);
+    pax_adc_input(PIO_AIN_A13,&SENS_TPS_V,TRUE);
     put_process_analog_input_init(&SENS_TPS_PROC_PAI_WORK);
     //PVS sensor
-    pax_adc_input(PIO_AIN_A19,&SENS_PVS_V,TRUE);
+    pax_adc_input(PIO_AIN_A12,&SENS_PVS_V,TRUE);
     put_process_analog_input_init(&SENS_PVS_PROC_PAI_WORK);
     //MAP sensor
-    pax_adc_input(PIO_AIN_A19,&SENS_MAP_V,TRUE);
+    pax_adc_input(PIO_AIN_A3,&SENS_MAP_V,TRUE);
     put_process_analog_input_init(&SENS_MAP_PROC_PAI_WORK);
     
     //Configure MAP angle sampling
