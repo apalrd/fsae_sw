@@ -46,7 +46,6 @@ extern U8 GF_CylNumberEff = 1;
 extern F32 GF_SpecificGasConst = 0.00;
 
 //Tables
-extern F32 GF_RPMIdx[];
 extern F32 GF_MAPIdx[];
 
 //Surfaces
