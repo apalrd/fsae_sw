@@ -75,7 +75,7 @@ application
     task
     {
       name     = temp_task_320ms;
-      priority = 4;
+      priority = 5;
       period   = 320;
       function = Task_320MS;
     }
