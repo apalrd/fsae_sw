@@ -6,11 +6,52 @@
 
 #include "openecu.h"
 #include "fsae_sw.h"
-#include "fuel.h"
+#include "etrq.h"
 
+//10MS torque calculation
+void ETRQ_Calc10MS()
+{
+    
+}
+
+//5MS ETC control
+void ETRQ_Calc5MS()
+{
+    //ETC motor control
+    
+    //Position error
+    ETRQ_ETC_Error = ETRQ_Des_TPS - SENS_TPS;
+    
+    //PID control
+    ETRQ_ETC_Pterm = ETRQ_ETC_Error * ETRQ_ETC_kP;
+    ETRQ_ETC_Integral += ETRQ_ETC_Error;
+    ETRQ_ETC_Iterm = ETRQ_ETC_Integral * ETRQ_ETC_kI;
+    ETRQ_ETC_Dterm = (ETRQ_ETC_Error - ETRQ_ETC_ErrorLast) * ETRQ_ETC_kD;
+    
+    ETRQ_ETC_ErrorLast = ETRQ_ETC_Error;
+    
+    //Output
+    ETRQ_ETC_Output = ETRQ_ETC_Pterm + ETRQ_ETC_Iterm + ETRQ_ETC_DTerm;
+    
+    //Enable output
+    
+    //Dial DC
+    if(DIAL_ETRQ_ETC_DC_SEL)
+    {
+        ETRQ_ETC_DC = DIAL_ETRQ_ETC_DC;
+    }
+    
+    pdx_hbridge_output(PIO_HBOT_A30_A1,
+                       ETRQ_ETC_Mode,
+                       ETRQ_ETC_Freq,
+                       ETRQ_ETC_DC,
+                       &ETRQ_ETC_ModeLast,
+                       FALSE);
+        
+}
 
 //Angular task calculation of fuel
-void Fuel_CalcTDC()
+void ETRQ_CalcTDC()
 {
     //Determine lean limit
     put_cal_map_2d_f32((F32)RPM,

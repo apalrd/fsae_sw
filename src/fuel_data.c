@@ -24,6 +24,21 @@ F32 FUEL_FA_Des = 0;
 F32 FUEL_FA_LeanLim = 0;
 //Angles
 F32 FUEL_VIT_Ang = 0;
+//Injector characterization
+F32 FUEL_Inj_Slope_Prim = 0;
+F32 FUEL_Inj_Slope_Sec = 0;
+F32 FUEL_Inj_DP_Prim = 0;
+F32 FUEL_Inj_DP_Sec = 0;
+F32 FUEL_Inj_Prs_Prim = 0;
+F32 FUEL_Inj_Prs_Sec = 0;
+F32 FUEL_Inj_Prs_Rail = 0;
+//Injector Limits
+F32 FUEL_Inj_PW_Lim = 0;
+F32 FUEL_Inj_Mass_Lim = 0;
+F32 FUEL_Inj_Pct_Split = 0;
+//Start Fuel
+F32 FUEL_PW_Start = 0;
+F32 FUEL_PW_Start_Raw = 0;
 
 //DIAL CAL
 OE_CAL F32 DIAL_FUEL_PW_Prim = 0;
@@ -104,10 +119,14 @@ OE_CAL F32 FUEL_PW_Start_Surf[17*17] = {
 OE_CAL F32 FUEL_FA_Stoich_Cal = 0.1024;
 //Req Fuel for start
 OE_CAL F32 FUEL_REQ = 8.15;
-OE_CAL F32 SPK_ADV_Start_Tbl[17] = {
+//Injector Characterization
+OE_CAL F32 FUEL_PW_Dead_Tbl[17] = {
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
 };
-//Dwell (indexed by batt)
-OE_CAL F32 SPK_DWELL_Tbl[17] = {
-    0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
+OE_CAL F32 FUEL_PW_Slope_Tbl[5] = {
+    0,  0,  0,  0,  0
 };
+OE_CAL F32 FUEL_Idx_InjPrs_Tbl[5] = {
+    0,  0,  0,  0,  0
+};
+OE_CAL F32 FUEL_Inj_Prs_Rail_Cal = 400;
