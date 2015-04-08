@@ -54,11 +54,11 @@ void EPM_CalcTDC2()
                   EPM_SPK_ANG);
     
     //Fuel
-    EPM_INJ_DEAD_TIME = INJ_DEAD_TIME;
-    EPM_INJ1_TIME = INJ_PRIM_TIME;
-    EPM_INJ2_TIME = INJ_SEC_TIME;
-    EPM_INJ_FIRING_ANG = INJ_VIT_ANG;
-    EPM_INJ_DROP_DEAD_ANG = INJ_DROP_DEAD_ANG;
+    EPM_INJ_DEAD_TIME = FUEL_PW_Dead;
+    EPM_INJ1_TIME = FUEL_PW_Prim;
+    EPM_INJ2_TIME = FUEL_PW_Sec;
+    EPM_INJ_FIRING_ANG = FUEL_VIT_Ang;
+    EPM_INJ_DROP_DEAD_ANG = FUEL_DropDead_Ang;
     
     //Active injector
     active_inj = EPM_INJ1_TIME;

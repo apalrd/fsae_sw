@@ -95,6 +95,8 @@ OE_CAL F32 FUEL_VIT_Surf[17*17] = {
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
 };
+//Drop Dead angle
+OE_CAL F32 FUEL_DropDead_Ang = 0;
 //start fuel
 OE_CAL F32 FUEL_PW_Start_Surf[17*17] = {
     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,

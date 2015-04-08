@@ -22,6 +22,7 @@ extern F32 FUEL_FA_Des;
 extern F32 FUEL_FA_LeanLim;
 //Angles
 extern F32 FUEL_VIT_Ang;
+extern F32 FUEL_DropDead_Ang;
 //Injector characterization
 extern F32 FUEL_Inj_Slope_Prim;
 extern F32 FUEL_Inj_Slope_Sec;
