@@ -8,14 +8,14 @@ Common Index header
 #define _COMIDX_H
 //CAL
 //VBATT index
-extern F32 IDX_VBatt[];
+extern OE_CAL F32 IDX_VBatt[];
 //ECT index
-extern F32 IDX_ECT[];
+extern OE_CAL F32 IDX_ECT[];
 //ACT index
-extern F32 IDX_ACT[];
+extern OE_CAL F32 IDX_ACT[];
 //RPM index
-extern F32 IDX_RPM[];
+extern OE_CAL F32 IDX_RPM[];
 //CHARGE index
-extern F32 IDX_Charge[];
+extern OE_CAL F32 IDX_Charge[];
 
 #endif

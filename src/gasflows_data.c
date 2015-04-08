@@ -16,7 +16,7 @@ F32 GF_PortMassFlow;
 //Base Charge before corrections
 F32 GF_ChargeBase;
 //Volumetric Efficiency final
-F32 GF_VEBase
+F32 GF_VEBase;
 //Volumetric efficiency correction adaption
 F32 GF_VECorr;
 //O2 correction integral

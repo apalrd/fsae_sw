@@ -8,18 +8,18 @@ Engine Drivers
 #define _EPM_H
 
 //Engine configuration
-extern F32 EPM_TDC_ANGLES[];
+extern OE_CAL F32 EPM_TDC_ANGLES[];
 //Cam/Crank config
-extern U8 EPM_CRANK_TEETH;
-extern U8 EPM_CRANK_MISS_TEETH;
+extern OE_CAL U8 EPM_CRANK_TEETH;
+extern OE_CAL U8 EPM_CRANK_MISS_TEETH;
 //Injector config
-extern PDX_LCHAN_T EPM_INJ_CHANS[];
+extern OE_CAL PDX_LCHAN_T EPM_INJ_CHANS[];
 //Spark config
-extern PDX_LCHAN_T EPM_SPK_CHANS[];
+extern OE_CAL PDX_LCHAN_T EPM_SPK_CHANS[];
 //Software config
-extern F32 EPM_SW_CALC_ANGLE;
-extern PAX_LCHAN_T EPM_SW_PRI_CHAN;
-extern F32 EPM_SW_PRI_ANG[];
+extern OE_CAL F32 EPM_SW_CALC_ANGLE;
+extern OE_CAL PAX_LCHAN_T EPM_SW_PRI_CHAN;
+extern OE_CAL F32 EPM_SW_PRI_ANG[];
 
 //Engine RAM
 extern U8 EPM_CUR_CYL;
