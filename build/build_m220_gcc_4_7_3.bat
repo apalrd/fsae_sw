@@ -77,10 +77,10 @@ SET TOOL_INTEGRATION_DIR=%OPENECU_BASE%tool_integration\
 for /f "delims=xxx" %%i in ('%OPENECU_CAPI_INPUT% --cfg-flags') do set CFG_FLAGS=%%i
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
-%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED %OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o fsae_sw.o     ..\..\src\fsae_sw.c > fsae_sw.lst
+%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o fsae_sw.o     ..\..\src\fsae_sw.c > fsae_sw.lst
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
-%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED %OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o gasflows.o     ..\..\src\gasflows.c > gasflows.lst
+%OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o gasflows.o     ..\..\src\gasflows.c > gasflows.lst
 @IF %ERRORLEVEL% NEQ 0 GOTO EndError
 
 %OPENECU_GCC%powerpc-eabispe-gcc %CFG_FLAGS% -DCFG_DONT_USE_DEPRECATED @%OPENECU_TARGET%mk_cc_gcc_4_7_3.opts -I. -I%OPENECU_INC% -o gasflows_data.o     ..\..\src\gasflows_data.c > gasflows_data.lst
