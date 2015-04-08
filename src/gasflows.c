@@ -59,7 +59,7 @@ void GF_CalcTDC()
     GF_ChargeBase = GF_MAP * GF_CylDispEff * GF_GasFac * GF_VEBase;
     
     //Use Charge Ratio to determine VE Corr
-    GF_VECorr = 0
+    GF_VECorr = 0;
     GF_O2S = 0;
     
     //Use VE Corr and O2S to adjust charge
