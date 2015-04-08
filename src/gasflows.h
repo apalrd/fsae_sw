@@ -37,21 +37,21 @@ extern F32 GF_CyclesPerSec;
 extern F32 GF_ChargeRat;
 
 //Dial Cals
-extern U8 DIAL_GF_VEBase_Sel;
-extern F32 DIAL_GF_VEBase;
+extern OE_CAL U8 DIAL_GF_VEBase_Sel;
+extern OE_CAL F32 DIAL_GF_VEBase;
 
 //Cals
 //Effective Displacement of cylinder
-extern F32 GF_CylDispEff;
+extern OE_CAL F32 GF_CylDispEff;
 //Effective number of cylinders
-extern U8 GF_CylNumberEff;
+extern OE_CAL U8 GF_CylNumberEff;
 //Specific gas constant
-extern F32 GF_SpecificGasConst;
+extern OE_CAL F32 GF_SpecificGasConst;
 
 //Tables
-extern F32 GF_MAPIdx[];
+extern OE_CAL F32 GF_MAPIdx[];
 
 //Surfaces
-extern F32 GF_VESurf[];
+extern OE_CAL F32 GF_VESurf[];
 
 #endif
