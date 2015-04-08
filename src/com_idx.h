@@ -14,7 +14,7 @@ extern F32 IDX_ECT[];
 //ACT index
 extern F32 IDX_ACT[];
 //RPM index
-extern 32 IDX_RPM[];
+extern F32 IDX_RPM[];
 //CHARGE index
 extern F32 IDX_Charge[];
 

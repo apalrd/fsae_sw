@@ -8,6 +8,7 @@
 #include "fsae_sw.h"
 #include "epm.h"
 #include "spark.h"
+#include "fuel.h"
 
 void EPM_Calc5MS()
 {

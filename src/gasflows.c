@@ -7,6 +7,8 @@
 #include "fsae_sw.h"
 #include "gasflows.h"
 #include "com_idx.h"
+#include "epm.h"
+#include "sensors.h"
 
 //Functions for calculating out flows in the 10ms task
 void GF_Calc10MS()
@@ -56,9 +58,6 @@ void GF_CalcTDC()
     //Determine GF Charge before VE Corrs for charge ratio
     GF_ChargeBase = GF_MAP * GF_CylDispEff * GF_GasFac * GF_VEBase;
     
-    //Determine Charge Ratio from this temp charge before VE Corr's
-    GF_ChargeRat = GF_ChargeBase / GF_ChargeAmbient;
-    
     //Use Charge Ratio to determine VE Corr
     GF_VECorr = 0
     GF_O2S = 0;
@@ -67,12 +66,6 @@ void GF_CalcTDC()
     GF_Charge = GF_ChargeBase * (1 + GF_VECorr) * (1 + GF_O2S);
     
     //Calculate Port Mass Flow from charge
-    GF_PortMassFlow = GF_Charge * GF_CyclesPerSec * GF_CylNumEff;
-    
-    //Now do it again for MAPPred
-    GF_ChargePred = GF_MAPPred * GF_CylDispEff * GF_GasFac * GF_VEBase * (1 + GF_VECorr) * (1 + GF_O2S);
-    
-    //Now flow version
-    GF_PortMassFlowPred = GF_ChargePred * GF_CyclesPerSec;
+    GF_PortMassFlow = GF_Charge * GF_CyclesPerSec * 1; //Hardcoded 1 cylinder engine
     
 }

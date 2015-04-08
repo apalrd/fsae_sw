@@ -7,6 +7,7 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "etrq.h"
+#include "sensors.h"
 
 //10MS torque calculation
 void ETRQ_Calc10MS()

@@ -7,6 +7,9 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "spark.h"
+#include "epm.h"
+#include "gasflows.h"
+#include "com_idx.h"
 
 void Spark_Calc40MS()
 {

@@ -7,7 +7,9 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "fuel.h"
-
+#include "com_idx.h"
+#include "epm.h"
+#include "gasflows.h"
 
 //Angular task calculation of fuel
 void Fuel_CalcTDC()

@@ -7,6 +7,7 @@
 #include "openecu.h"
 #include "fsae_sw.h"
 #include "sensors.h"
+#include "gasflows.h"
 
 
 void SEN_Calc320MS()
@@ -139,6 +140,11 @@ void SENS_Calc5MS()
                        SENS_MAP_ENG_MIN_FLT |
                        SENS_MAP_ENG_MAX_FLT |
                        SENS_MAP_TRANSIENT_FLT);
+    
+    //Copy SENS_MAP to GF_MAP for now
+    //Eventually use angular sampled MAP for GF_MAP if engine is spinning
+    //Else use SENS_MAP
+    GF_MAP = SENS_MAP;
 
 }
 
