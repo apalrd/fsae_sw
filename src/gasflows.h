@@ -2,6 +2,9 @@
 // Gasflows
 //
 
+#ifndef _GASFLOWS_H
+#define _GASFLOWS_H
+
 //General definition: C to K
 #define DEG_C_TO_K 273.3
 
@@ -34,19 +37,21 @@ extern F32 GF_CyclesPerSec;
 extern F32 GF_ChargeRat;
 
 //Dial Cals
-extern U8 DIAL_GF_VEBase_Sel = 0;
-extern F32 DIAL_GF_VEBase = 0.0;
+extern U8 DIAL_GF_VEBase_Sel;
+extern F32 DIAL_GF_VEBase;
 
 //Cals
 //Effective Displacement of cylinder
-extern F32 GF_CylDispEff = 0.449;
+extern F32 GF_CylDispEff;
 //Effective number of cylinders
-extern U8 GF_CylNumberEff = 1;
+extern U8 GF_CylNumberEff;
 //Specific gas constant
-extern F32 GF_SpecificGasConst = 0.00;
+extern F32 GF_SpecificGasConst;
 
 //Tables
 extern F32 GF_MAPIdx[];
 
 //Surfaces
 extern F32 GF_VESurf[];
+
+#endif

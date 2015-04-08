@@ -1,8 +1,11 @@
 /*
 Copyright 2014, 2015 Andrew Palardy
 Kettering University CSC/FSAE Engine Software
-Engine Drivers
+Spark header
 */
+
+#ifndef _SPARK_H
+#define _SPARK_H
 
 //RAM
 extern F32 SPK_ADV_Base;
@@ -28,3 +31,5 @@ extern F32 SPK_DWELL_Tbl[];
 void Spark_Calc40MS();
 void Spark_CalcTDC();
 void Spark_Init();
+
+#endif

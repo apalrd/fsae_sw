@@ -4,6 +4,8 @@ Kettering University CSC/FSAE Engine Software
 Engine Drivers
 */
 
+#ifndef _EPM_H
+#define _EPM_H
 
 //Engine configuration
 extern F32 EPM_TDC_ANGLES[];
@@ -46,3 +48,5 @@ extern F32 EPM_SPK_ANG;
 extern F32 EPM_SPK_START_ANG;
 //Software RAM
 extern S16 EPM_SW_PRI_V;
+
+#endif

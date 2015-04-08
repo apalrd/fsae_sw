@@ -1,18 +1,11 @@
 /*
 Copyright 2014, 2015 Andrew Palardy
 Kettering University CSC/FSAE Engine Software
-Engine Drivers
+Fuel header
 */
-//
-// Andrew Palardy
-// Fuel
-// Data File
-//
 
-#include "openecu.h"
-#include "fsae_sw.h"
-#include "fuel.h"
-
+#ifndef _FUEL_H
+#define _FUEL_H
 
 //RAM
 //Pulse widths
@@ -73,3 +66,6 @@ extern F32 FUEL_PW_Dead_Tbl[];
 extern F32 FUEL_PW_Slope_Tbl[];
 extern F32 FUEL_Idx_InjPrs_Tbl[];
 extern F32 FUEL_Inj_Prs_Rail_Cal;
+
+
+#endif

@@ -4,6 +4,9 @@ Kettering University CSC/FSAE Engine Software
 Sensors Input (header)
 */
 
+#ifndef _SENSORS_H
+#define _SENSORS_H
+
 //ECT sensor
 extern F32 SENS_ECT; //DegC
 extern S16 SENS_ECT_V; //Volts (raw)
@@ -151,3 +154,5 @@ extern F32 SENS_PVS_FLT_SLEW_RATE;
 //PVS sensor const
 extern PUT_ANALOGUE_CAL_DATA_T SENS_PVS_PROC_PAI_CAL;
 extern PUT_ANALOGUE_WORKSPACE_T SENS_PVS_PROC_PAI_WORK;
+
+#endif

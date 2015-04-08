@@ -4,7 +4,8 @@ Kettering University CSC/FSAE Engine Software
 Common Index header
 */
 
-
+#ifndef _COMIDX_H
+#define _COMIDX_H
 //CAL
 //VBATT index
 extern F32 IDX_VBatt[];
@@ -16,3 +17,5 @@ extern F32 IDX_ACT[];
 extern 32 IDX_RPM[];
 //CHARGE index
 extern F32 IDX_Charge[];
+
+#endif
