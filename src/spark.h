@@ -23,7 +23,7 @@ extern BOOL DIAL_SPK_DWELL_Sel;
 extern F32 SPK_ADV_PowerOn_Surf[];
 extern F32 SPK_ADV_PowerOff_Surf[];
 //Start Spark (indexed by ECT)
-extern F32 SPK_ADV_Start_Tbl];
+extern F32 SPK_ADV_Start_Tbl[];
 //Dwell (indexed by batt)
 extern F32 SPK_DWELL_Tbl[];
 
